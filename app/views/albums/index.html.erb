@@ -1,16 +1,30 @@
 <h1>Albums</h1>
 
-  <% image_tag "record.png" %>
+<% image_tag "record.png" %>
 
 <% if @albums.any? %>
-  <ul>
-    <% @albums.each do |album| %>
-      <li><%= link_to album.name, album_path(album) %></li>
-    <% end %>
-  </ul>
+<ul>
+  <% @albums.each do |album| %>
+  <li><%= link_to album.name, album_path(album) %></li>
+  <% end %>
+</ul>
 <% else %>
-  <p>There are no albums yet.</p>
+<p>There are no albums yet.</p>
 <% end %>
 
 
 <p><%= link_to "Create new album", new_album_path %></p>
+
+<h1>Artists</h1>
+<% if @artists.any? %>
+<ul>
+  <% @artists.each do |artist| %>
+  <li><%= link_to artist.name, artist_path(artist) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no artists yet.</p>
+<% end %>
+
+
+<p><%= link_to "Create new artist", new_artist_path %></p>

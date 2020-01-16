@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = Album.all
+    @artists = Artist.all
     render :index
   end
 

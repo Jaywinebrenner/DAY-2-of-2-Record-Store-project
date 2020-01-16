@@ -1,9 +1,9 @@
 class ArtistsController < ApplicationController
 
-  def index
-    @artists = Artist.all
-    render :index
-  end
+  # def index
+  #   @artists = Artist.all
+  #   render :index
+  # end
 
   def new
     @artist = Artist.new
@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     if @artist.save
       flash[:notice] = "Artist successfully added!"
-      redirect_to artists_path
+      redirect_to albums_path
     else
       render :new
     end
@@ -33,7 +33,7 @@ class ArtistsController < ApplicationController
    def update
      @artist= Artist.find(params[:id])
      if @artist.update(artist_params)
-       redirect_to artists_path
+       redirect_to albums_path
      else
        render :edit
      end

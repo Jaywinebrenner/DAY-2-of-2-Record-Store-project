@@ -1,0 +1,8 @@
+<h1>Edit artist:</h1>
+
+<%= form_for [@album, @artist] do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<p><%= f.submit %></p>
+<% end %>
