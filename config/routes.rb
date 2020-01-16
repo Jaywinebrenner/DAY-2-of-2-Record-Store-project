@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   resources :albums do
     resources :songs
   end
-  root to: 'albums#index'
   resources :artists do
     resources :albums
+  end
+  resources :albums do
+    resources :artists
   end
 
 end

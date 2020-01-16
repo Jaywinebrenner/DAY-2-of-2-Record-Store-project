@@ -13,6 +13,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
+
     if @album.save
       flash[:notice] = "Album successfully added!"
       redirect_to albums_path
@@ -28,6 +29,8 @@ class AlbumsController < ApplicationController
 
    def show
      @album = Album.find(params[:id])
+     # @artist = Artist.find(params[:id])
+          @artists = Artist.all
      render :show
    end
 

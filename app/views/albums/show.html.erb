@@ -1,25 +1,43 @@
+
 <h1>Album Name: <%= @album.name %></h1>
 <h4>Album Genre: <%= @album.genre %></h4>
 
 <% if @album.songs.any? %>
-  <h4>Here are the songs for this album:</h4>
+<h4>Here are the songs for this album:</h4>
 
-  <% @album.songs.each do |song| %>
-    <ul>
-      <li>
-        <%= link_to song.name, album_song_path(@album, song) %>
-      </li>
-    </ul>
-  <% end %>
+<% @album.songs.each do |song| %>
+<ul>
+  <li>
+    <%= link_to song.name, album_song_path(@album, song) %>
+  </li>
+</ul>
+<% end %>
 <% else %>
-  <p>No songs are listed for this album.</p>
+<p>No songs are listed for this album.</p>
 <% end %>
 
 <p><%= link_to "Add a song", new_album_song_path(@album) %></p>
 
 <p><%= link_to "Edit", edit_album_path(@album) %></p>
 <p><%= link_to "Delete album", album_path(@album),
-                        :data => {:confirm => "Are you sure?",
-                                       :method => "delete"} %></p>
+  :data => {:confirm => "Are you sure?",
+  :method => "delete"} %></p>
 
-<p><%= link_to "Return to albums", albums_path %></p>
+  <h1>Artists</h1>
+  <% if @artists.any? %>
+  <form>
+    <select name="artist_to_add">
+      <% @artists.each do |artist| %>
+      <option value="<%= artist.id %>"><%= link_to artist.name, artist_path(artist) %></option>
+      <% end %>
+    </select>
+    <button type="submit" name="button">go</button>
+  </form>
+  <% else %>
+  <p>There are no artists yet.</p>
+  <% end %>
+
+
+
+
+  <p><%= link_to "Return to albums", albums_path %></p>
