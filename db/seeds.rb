@@ -14,4 +14,13 @@ Album.destroy_all
   Album.create!(name: Faker::Artist.name)
 end
 
-p "Created #{Album.count} spices"
+p "Created #{Album.count} albums"
+
+
+Artist.destroy_all
+
+50.times do |index|
+  Artist.create!(name: Faker::GreekPhilosophers.name)
+end
+
+p "Created #{Artist.count} artists"
