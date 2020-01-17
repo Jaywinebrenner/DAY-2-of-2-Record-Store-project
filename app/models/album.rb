@@ -1,5 +1,6 @@
 class Album < ApplicationRecord
   scope :rock, -> { where(genre: "Rock") }
+  scope :search, -> (album_parameter) { where("name like ?", "%#{album_parameter}%")}
   has_and_belongs_to_many(:artists)
   has_many :songs, dependent: :destroy
   validates :name, presence: true

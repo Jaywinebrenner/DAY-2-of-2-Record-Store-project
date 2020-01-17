@@ -20,7 +20,8 @@
 
   <%= yield %>
 
+  <div class="notice"><%= flash[:notice] %></div>
   <%= flash[:alert] %>
-  <%= flash[:notice] %>
+
 </body>
 </html>

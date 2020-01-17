@@ -11,6 +11,12 @@
 <% else %>
 <p>There are no albums yet.</p>
 <% end %>
+<!-- scope code -->
+<form>
+  <label>Search Albums by Title</label>
+  <input type="text" name="search">
+  <button type="button" name="button">go!</button>
+</form>
 
 <p><%= link_to "Create new album", new_album_path %></p>
 
