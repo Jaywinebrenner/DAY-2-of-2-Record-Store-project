@@ -1,6 +1,6 @@
 # Record Store project
 
-## By **Jay Winebrenner and Noah Horowitz
+## By **Jay Winebrenner**
 
 ### Description
 
